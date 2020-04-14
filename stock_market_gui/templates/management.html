@@ -70,24 +70,42 @@
 		<div class="row">
 			<div class="col-md-3">
 				<table class="table">
+					<thead>
+					    <tr>
+					      <th colspan="2">Portfolio Inputs</th>
+					    </tr>
+					</thead>
 					<tbody>
 						<tr>
 							<td>Portfolio</td>				
-							<td><input type='text' class='text' id='portfolioAmt'></td>
+							<td><input type='text' class="form-control" id='portfolioAmt'></td>
 						</tr>
 						<tr>
 							<td>Risk %</td>				
-							<td><input type='text' class='text' id='riskPercent'></td>
+							<td><input type='text' class="form-control" id='riskPercent'></td>
 						</tr>
 						<tr>
 							<td>Profit/Risk Ratio</td>				
-							<td><input type='text' class='text' id='profitRiskRatio'></td>
+							<td><input type='text' class="form-control" id='profitRiskRatio'></td>
+						</tr>
+						<tr>
+							<td>Commission per trade</td>				
+							<td><input type='text' class="form-control" id='commPerTrade'></td>
+						</tr>
+						<tr>
+							<td>Commission per share</td>				
+							<td><input type='text' class="form-control" id='commPerShare'></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-3 offset-md-1">
 				<table class="table">
+					<thead>
+					    <tr>
+					      <th colspan="2">Trade Outputs</th>
+					    </tr>
+					</thead>
 					<tbody>
 						<tr>
 							<td>Risk $ Amount</td>				
@@ -112,6 +130,11 @@
 		<div class="row">
 			<div class="col-md-3">
 				<table class="table">
+					<thead>
+					    <tr>
+					      <th colspan="2">Trade Position Points</th>
+					    </tr>
+					</thead>
 					<tbody>
 						<tr>
 							<td>Sell Price</td>				
@@ -123,7 +146,7 @@
 						</tr>
 						<tr>
 							<td>Buy Price</td>				
-							<td><input type='text' class='text' id='buyPrice'></td>
+							<td><input type='text' class="form-control" id='buyPrice'></td>
 						</tr>
 						<tr>
 							<td>Stop Loss</td>				
@@ -131,9 +154,15 @@
 						</tr>
 					</tbody>
 				</table>
+				<button type="button" class="btn btn-primary" id="calcStockPrice">Calculate</button>
 			</div>
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-3 offset-md-1">
 				<table class="table">
+					<thead>
+					    <tr>
+					      <th colspan="2">Stop Calc %</th>
+					    </tr>
+					</thead>
 					<tbody>
 						<tr>
 							<td>1%</td>				
@@ -149,7 +178,7 @@
 						</tr>
 						<tr>
 							<td>3%</td>				
-							<td><span id=threePer'></span></td>
+							<td><span id='threePer'></span></td>
 						</tr>
 						<tr>
 							<td>4%</td>				
@@ -177,7 +206,7 @@
 						</tr>
 						<tr>
 							<td>10%</td>				
-							<td><span id='tenthPer'></span></td>
+							<td><span id='tenPer'></span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -316,10 +345,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
-<script>
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
-</script>
+<script src="../static/public/management.js"></script>
 </body>
 </html>
