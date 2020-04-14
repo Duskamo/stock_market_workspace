@@ -67,7 +67,122 @@
 	    </div>
 	    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 	      <div class="card-body">
-		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		<div class="row">
+			<div class="col-md-3">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Portfolio</td>				
+							<td><input type='text' class='text' id='portfolioAmt'></td>
+						</tr>
+						<tr>
+							<td>Risk %</td>				
+							<td><input type='text' class='text' id='riskPercent'></td>
+						</tr>
+						<tr>
+							<td>Profit/Risk Ratio</td>				
+							<td><input type='text' class='text' id='profitRiskRatio'></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Risk $ Amount</td>				
+							<td><span id='riskAmt'></span></td>
+						</tr>
+						<tr>
+							<td>Shares to Buy</td>				
+							<td><span id='sharesToBuy'></span></td>
+						</tr>
+						<tr>
+							<td>Profit $ Amount</td>				
+							<td><span id='profitAmt'></span></td>
+						</tr>
+						<tr>
+							<td>Cost for Shares</td>				
+							<td><span id='costForShares'></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Sell Price</td>				
+							<td><span id='sellPrice'></span></td>
+						</tr>
+						<tr>
+							<td>Reavaluate</td>				
+							<td><span id='reavaluate'></span></td>
+						</tr>
+						<tr>
+							<td>Buy Price</td>				
+							<td><input type='text' class='text' id='buyPrice'></td>
+						</tr>
+						<tr>
+							<td>Stop Loss</td>				
+							<td><span id='stopLoss'></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>1%</td>				
+							<td><span id='onePer'></span></td>
+						</tr>
+						<tr>
+							<td>2%</td>				
+							<td><span id='twoPer'></span></td>
+						</tr>
+						<tr>
+							<td>2.5%</td>				
+							<td><span id='twoHalfPer'></span></td>
+						</tr>
+						<tr>
+							<td>3%</td>				
+							<td><span id=threePer'></span></td>
+						</tr>
+						<tr>
+							<td>4%</td>				
+							<td><span id='fourPer'></span></td>
+						</tr>
+						<tr>
+							<td>5%</td>				
+							<td><span id='fivePer'></span></td>
+						</tr>
+						<tr>
+							<td>6%</td>				
+							<td><span id='sixPer'></span></td>
+						</tr>
+						<tr>
+							<td>7%</td>				
+							<td><span id='sevenPer'></span></td>
+						</tr>
+						<tr>
+							<td>8%</td>				
+							<td><span id='eightPer'></span></td>
+						</tr>
+						<tr>
+							<td>9%</td>				
+							<td><span id='ninePer'></span></td>
+						</tr>
+						<tr>
+							<td>10%</td>				
+							<td><span id='tenthPer'></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	      </div>
 	    </div>
 	  </div>
@@ -81,6 +196,7 @@
 	    </div>
 	    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 	      <div class="card-body">
+		<!--Trading Journal Datatable -->
 		<table id="example" class="display" style="width:100%">
 			<thead>
 			    <tr>
@@ -188,7 +304,7 @@
 				<th>Sum W/L</th>
 			    </tr>
 			</tfoot>
-		    </table>    	
+		   </table>    	
 	      </div>
 	    </div>
 	  </div>
