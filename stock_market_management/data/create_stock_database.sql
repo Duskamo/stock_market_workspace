@@ -4,6 +4,8 @@ DROP DATABASE stock_market_workspace;
 CREATE DATABASE stock_market_workspace;
 
 /* Create Tables */
+USE stock_market_workspace;
+
 DROP TABLE trading_journal;
 CREATE TABLE trading_journal(
 	trade_id INT NOT NULL,

@@ -2,19 +2,30 @@ $(document).ready(function() {
 	/* 
 	1.) Datatable Init
 	2.) Stock Calculator Init
+	3.) Journal Populate
 	*/
 
 	datatableInit();
     	stockCalcInit();
-
+	journalPopulate();
 } );
 
-// Datatable Init
+// 1.) Datatable Init
 function datatableInit() {
 	$('#example').DataTable();
+	/*
+	$('#example').DataTable({
+		$.ajax: {
+			url: "http://localhost:5000/get_journal_list",
+			method:"GET"		
+		},
+		columns: [
+			{data:}
+		]
+	});*/
 }
 
-// Stock Calculator Init
+// 2.) Stock Calculator Init
 function stockCalcInit() {
 	$('#calcStockPrice').on('click',function() {
 		// Gather data and make calculations
@@ -54,5 +65,16 @@ function stockCalcInit() {
 		$('#sharesToBuy').html(sharesToBuy.toFixed(0));
 		$('#profitAmt').html('$' + profitAmt.toFixed(2));
 		$('#costForShares').html('$' + costForShares.toFixed(2));
+	});
+}
+
+// 3.) Journal Populate
+function journalPopulate() {
+	$.ajax({
+		url: "http://localhost:5000/get_journal_list",
+		type:"GET",
+		success: function(html){
+			console.log(html);
+		}		
 	});
 }

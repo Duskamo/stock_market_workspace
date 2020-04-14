@@ -23,6 +23,14 @@ def automation():
 
 
 # Data Requests
+@app.route('/get_journal_list', methods=['GET'])
+def get_journal_list():
+	# Get Data
+	managementServiceUrl = "http://localhost:5001/get_journal_list"
+	resp = requests.get(managementServiceUrl)
+
+	# Return Data to UI
+	return resp.text
 
 """
 @app.route('/update_car', methods=['POST'])
