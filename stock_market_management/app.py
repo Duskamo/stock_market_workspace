@@ -29,7 +29,11 @@ def get_journal_list():
 def import_data_to_table():
 	# Login to MarketWatch and download data
 	transactionAutomator = TransactionGatherAutomator()
+	transactionAutomator.setup()
+	transactionAutomator.login()
 	transactionAutomator.extractTransactionData()
+	transactionAutomator.teardown()
+	transactionAutomator.readFromFile()
 	transactionList = transactionAutomator.getData()
 
 	# Convert data to journal format
