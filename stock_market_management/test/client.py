@@ -6,4 +6,11 @@ def testJournalList():
 
 	print(resp.text)
 
-testJournalList()
+def import_data_to_table():
+	managementServiceUrl = "http://localhost:5001/import_data_to_table"
+	resp = requests.get(managementServiceUrl)
+
+	print(resp.text)
+
+#testJournalList()
+import_data_to_table()

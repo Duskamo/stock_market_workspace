@@ -31,6 +31,7 @@ def get_journal_list():
 
 	# Return Data to UI
 	return resp.text
+	
 
 """
 @app.route('/update_car', methods=['POST'])

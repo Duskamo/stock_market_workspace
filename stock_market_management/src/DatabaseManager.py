@@ -16,4 +16,4 @@ class DatabaseManager:
 		
 		myresult = self.mycursor.fetchall()
 
-		return {"journalList" : myresult}
+		return {"data" : myresult}
