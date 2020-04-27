@@ -22,11 +22,11 @@ class JournalManager:
 			winLoss = 1 if (self.journalDict['data'][i]['profit_and_loss'] > 0) else 0
 			sumWinLoss = winLoss + (0 if (i == 0) else self.journalDict['data'][i-1]['sum_wl'])
 
-			self.journalDict['data'][i]['r_multiple'] = self.journalDict['data'][i]['profit_and_loss'] / self.journalDict['data'][i]['initial_risk']
-			self.journalDict['data'][i]['percent_wins'] = sumWinLoss / self.journalDict['data'][i]['trade_id']
-			self.journalDict['data'][i]['money_at_work'] = money_at_work
-			self.journalDict['data'][i]['percent_pl'] = (self.journalDict['data'][i]['profit_and_loss'] / money_at_work) * 100
-			self.journalDict['data'][i]['initial_percent_risk'] = (self.journalDict['data'][i]['initial_risk'] / money_at_work) * 100
+			self.journalDict['data'][i]['r_multiple'] = round(self.journalDict['data'][i]['profit_and_loss'] / self.journalDict['data'][i]['initial_risk'],2)
+			self.journalDict['data'][i]['percent_wins'] = round(sumWinLoss / self.journalDict['data'][i]['trade_id'],2)
+			self.journalDict['data'][i]['money_at_work'] = round(money_at_work,2)
+			self.journalDict['data'][i]['percent_pl'] = round((self.journalDict['data'][i]['profit_and_loss'] / money_at_work) * 100,2)
+			self.journalDict['data'][i]['initial_percent_risk'] = round((self.journalDict['data'][i]['initial_risk'] / money_at_work) * 100,2)
 			self.journalDict['data'][i]['wl'] = winLoss
 			self.journalDict['data'][i]['sum_wl'] = sumWinLoss
 
