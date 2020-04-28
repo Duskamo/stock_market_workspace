@@ -17,7 +17,7 @@ function pageSetup() {
 
 	// Gather individual news based on passed parameter 
 	$.ajax({
-			url: "http://localhost:5000/get_current_stock_news",
+			url: "/get_current_stock_news",
 			method:"POST",
 			contentType:"application/json",
 			dataType:"json",
