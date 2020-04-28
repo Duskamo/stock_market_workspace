@@ -31,7 +31,26 @@ def get_journal_list():
 
 	# Return Data to UI
 	return resp.text
+
+@app.route('/import_data_to_table', methods=['GET'])
+def import_data_to_table():
+	# Get Data
+	managementServiceUrl = "http://localhost:5001/import_data_to_table"
+	resp = requests.get(managementServiceUrl)
+
+	# Return Data to UI
+	return resp.text
+
+@app.route('/get_current_stock_news', methods=['POST'])
+def get_current_stock_news():
+	# Get input data from front-end
+	stocksDict = request.get_json()	
 	
+	newsServiceUrl = "http://localhost:5002/get_current_stock_news"
+	resp = requests.post(newsServiceUrl,json=stocksDict)
+
+	return resp.text
+
 
 """
 @app.route('/update_car', methods=['POST'])

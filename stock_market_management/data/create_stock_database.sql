@@ -12,7 +12,7 @@ CREATE TABLE trading_journal(
 	trade_date VARCHAR(15),
 	symbol VARCHAR(10),
 	type VARCHAR(5),
-	quantity INT,
+	quantity FLOAT,
 	bought FLOAT,
 	sold FLOAT,
 	initial_risk FLOAT,

@@ -17,8 +17,9 @@ def get_journal_list():
 
 	# 1.) Convert saved journal list data to dictionary object
 	# 2.) Add new fields and calculations and return newly crafted json object to GUI
-	journalManager = JournalManager(journalList)
-	journalManager.convertListTODict()
+	journalManager = JournalManager()
+	journalManager.addJournalList(journalList)
+	journalManager.convertJournalListTODict()
 	journalManager.appendCalculatedFields()
 	journal = journalManager.getJournal()
 	
@@ -37,10 +38,17 @@ def import_data_to_table():
 	transactionList = transactionAutomator.getData()
 
 	# Convert data to journal format
+	journalManager = JournalManager()
+	journalManager.addTransactionList(transactionList)
+	journalManager.convertTransactionListToJournalList()	
+	journalList = journalManager.getJournalList()
 
 	# Save journal to database
+	database = DatabaseManager()
+	result = database.insertJournalList(journalList)
 
-	return "True"
+	# Return result
+	return "Success"
 	
 # Run app on 0.0.0.0:5001
 if __name__ == "__main__":

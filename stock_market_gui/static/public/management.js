@@ -7,12 +7,11 @@ $(document).ready(function() {
 
 	datatableInit();
     	stockCalcInit();
-	journalPopulate();
+	importJournal();
 } );
 
 // 1.) Datatable Init
 function datatableInit() {
-	//$('#example').DataTable();
 	$('#example').DataTable({
 		"ajax": "http://localhost:5000/get_journal_list",
 		"columns": [
@@ -80,13 +79,17 @@ function stockCalcInit() {
 	});
 }
 
-// 3.) Journal Populate
-function journalPopulate() {
-	$.ajax({
-		url: "http://localhost:5000/get_journal_list",
-		type:"GET",
-		success: function(html){
-			console.log(html);
-		}		
+// 3.) Import Journal
+function importJournal() {
+	$("#importData").on('click',function(){
+		$.ajax({
+			url: "http://localhost:5000/import_data_to_table",
+			type:"GET",
+			success: function(html){
+				console.log(html);
+			}		
+		});
+
+		location.reload();
 	});
 }

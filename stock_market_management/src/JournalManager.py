@@ -1,10 +1,15 @@
 
 class JournalManager:
-	def __init__(self,journalList):
-		self.journalList = journalList
+	def __init__(self):
+		self.journalList = []
+		self.transactionList = []
 		self.journalDict = []
 
-	def convertListTODict(self):
+	# Manager - From Initial Database List To Prepped Journal List For GUI  
+	def addJournalList(self,journalList):
+		self.journalList = journalList
+
+	def convertJournalListTODict(self):
 		listOfIndexes = ['trade_id','trade_date','symbol','type','quantity','bought','sold','initial_risk','commission','profit_and_loss']
 		listOfLists = self.journalList['data']
 
@@ -33,3 +38,31 @@ class JournalManager:
 	def getJournal(self):
 		return self.journalDict
 
+	# Manager - From Initial Transaction List to Stored Database List
+	def addTransactionList(self,transactionList):
+		self.transactionList = transactionList
+
+	def convertTransactionListToJournalList(self):
+		for i in range(len(self.transactionList)):
+			if (self.transactionList[i]['Type'] == "Sell"):
+				for j in range(len(self.transactionList)):
+					if (self.transactionList[i]['Amount'] == self.transactionList[j]['Amount'] and self.transactionList[i]['Symbol'] == self.transactionList[j]['Symbol'] and self.transactionList[i] != self.transactionList[j] and self.transactionList[j]['Type'] == "Buy"):
+						self.journalList.append({
+							'trade_date':self.transactionList[i]['Transaction Date'].split()[0],
+							'symbol':self.transactionList[i]['Symbol'],
+							'type':'L',
+							'quantity':self.transactionList[i]['Amount'].replace(',',''),
+							'bought':self.transactionList[i]['Price'][1:],
+							'sold':self.transactionList[j]['Price'][1:],
+							'initial_risk':round((float(self.transactionList[i]['Price'][1:])*float(self.transactionList[i]['Amount'].replace(',',''))*.01),2),
+							'commission':"0",
+
+							'profit_and_loss':round((float(self.transactionList[j]['Price'][1:])*float(self.transactionList[j]['Amount'].replace(',',''))) - (float(self.transactionList[i]['Price'][1:])*float(self.transactionList[i]['Amount'].replace(',',''))),2)
+						})
+
+		for i in range(len(self.journalList)):
+			self.journalList[i]['trade_id'] = i + 1
+
+		
+	def getJournalList(self):
+		return self.journalList

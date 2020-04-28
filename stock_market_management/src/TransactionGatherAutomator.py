@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
+import csv
 
 class TransactionGatherAutomator:
 	def __init__(self):
@@ -49,7 +50,22 @@ class TransactionGatherAutomator:
 		self.driver.close()
 
 	def readFromFile(self):
-		""
+		my_path  = os.path.abspath(os.path.dirname(__file__))
+		path = os.path.join(my_path, '../data/download')
+	
+		with open(path, newline="") as csvfile:
+			reader = csv.DictReader(csvfile)
+			
+			for row in reader:
+				self.tansactionList.append({
+					'Symbol':row['Symbol'],
+					'Order Date':row['Order Date'],
+					'Transaction Date':row['Transaction Date'],
+					'Type':row['Type'],
+					'Cancel Reason':row['Cancel Reason'],
+					'Amount':row['Amount'],
+					'Price':row['Price']			
+				})
 
 	def getData(self):
 		return self.tansactionList
