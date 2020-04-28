@@ -17,6 +17,12 @@ def management():
 def news():
 	return render_template('news.html')
 
+@app.route('/news/<symbol>')
+def news_solo(symbol):
+	print(symbol)
+
+	return render_template('news_solo.html')
+
 @app.route('/automation')
 def automation():
 	return render_template('automation.html')

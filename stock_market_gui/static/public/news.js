@@ -23,7 +23,7 @@ function findNews() {
 				articleList = "";
 
 				for (var i = 0; i < allArticles.length; i++) {			
-					articleList += "<li class='list-group-item'>Stock: " + allArticles[i]['stock'] + ", Total Results: " +allArticles[i]['totalResults'] + "</li>";
+					articleList += "<li class='list-group-item'><a href=/news/" + allArticles[i]['stock'] + ">Stock: " + allArticles[i]['stock'] + ", Total Results: " +allArticles[i]['totalResults'] + "</a></li>";
 				}
 
 				$('#stockListGroup').html(articleList);
