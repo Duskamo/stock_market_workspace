@@ -56,17 +56,16 @@ function stockCalcInit() {
 		var costForShares = buyPrice * sharesToBuy;
 
 		// Calculate all stop loss %
+		$("#halfPer").html("$" + (buyPrice * 0.005).toFixed(2));
 		$("#onePer").html("$" + (buyPrice * 0.01).toFixed(2));
+		$("#oneHalfPer").html("$" + (buyPrice * 0.015).toFixed(2));
 		$("#twoPer").html("$" + (buyPrice * 0.02).toFixed(2));
 		$("#twoHalfPer").html("$" + (buyPrice * 0.025).toFixed(2));
 		$("#threePer").html("$" + (buyPrice * 0.03).toFixed(2));
+		$("#threeHalfPer").html("$" + (buyPrice * 0.035).toFixed(2));
 		$("#fourPer").html("$" + (buyPrice * 0.04).toFixed(2));
+		$("#fourHalfPer").html("$" + (buyPrice * 0.045).toFixed(2));
 		$("#fivePer").html("$" + (buyPrice * 0.05).toFixed(2));
-		$("#sixPer").html("$" + (buyPrice * 0.06).toFixed(2));
-		$("#sevenPer").html("$" + (buyPrice * 0.07).toFixed(2));
-		$("#eightPer").html("$" + (buyPrice * 0.08).toFixed(2));
-		$("#ninePer").html("$" + (buyPrice * 0.09).toFixed(2));
-		$("#tenPer").html("$" + (buyPrice * 0.1).toFixed(2));
 
 		// Trade Position Points
 		$('#stopLoss').html("$" + stopLossCalc.toFixed(2));

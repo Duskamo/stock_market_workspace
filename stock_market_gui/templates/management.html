@@ -165,8 +165,16 @@
 					</thead>
 					<tbody>
 						<tr>
+							<td>0.5%</td>				
+							<td><span id='halfPer'></span></td>
+						</tr>
+						<tr>
 							<td>1%</td>				
 							<td><span id='onePer'></span></td>
+						</tr>
+						<tr>
+							<td>1.5%</td>				
+							<td><span id='oneHalfPer'></span></td>
 						</tr>
 						<tr>
 							<td>2%</td>				
@@ -181,32 +189,20 @@
 							<td><span id='threePer'></span></td>
 						</tr>
 						<tr>
+							<td>3.5%</td>				
+							<td><span id='threeHalfPer'></span></td>
+						</tr>
+						<tr>
 							<td>4%</td>				
 							<td><span id='fourPer'></span></td>
 						</tr>
 						<tr>
+							<td>4.5%</td>				
+							<td><span id='fourHalfPer'></span></td>
+						</tr>
+						<tr>
 							<td>5%</td>				
 							<td><span id='fivePer'></span></td>
-						</tr>
-						<tr>
-							<td>6%</td>				
-							<td><span id='sixPer'></span></td>
-						</tr>
-						<tr>
-							<td>7%</td>				
-							<td><span id='sevenPer'></span></td>
-						</tr>
-						<tr>
-							<td>8%</td>				
-							<td><span id='eightPer'></span></td>
-						</tr>
-						<tr>
-							<td>9%</td>				
-							<td><span id='ninePer'></span></td>
-						</tr>
-						<tr>
-							<td>10%</td>				
-							<td><span id='tenPer'></span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -273,6 +269,25 @@
 		<div style="text-align:left;">
 			<button type="button" class="btn btn-primary" onclick="$('#example').table2CSV({header:['trade_id','trade_date','symbol','type','quantity','bought','sold','initial_risk','commission','profit_and_loss','r_multiple','percent_wins','money_at_work','percent_pl','initial_percent_risk','wl','sum_wl']})">Export CSV</button>
 			<button type="button" class="btn btn-primary" id="importData">Import Data</button>	
+		</div>
+		<br />
+		<hr>
+		<div style="text-align:left;">
+			<label for="addRowTable">Add row to data table</label>
+			<table class="table" id="addRowTable" style="width:70%">
+				<tr>
+					<td><input type="text" class="form-control" placeholder="Date" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="Symbol" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="L/S" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="QTY" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="Bought" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="Sold" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="Initial Risk" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="Comm" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td><input type="text" class="form-control" placeholder="P&L" aria-label="Username" aria-describedby="basic-addon1"></td>
+					<td width="120px"><button type="button" class="btn btn-primary" id="addRow">Add Row</button></td>
+				</tr>
+			</table>	
 		</div>
 	      </div>
 	    </div>
