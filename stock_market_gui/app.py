@@ -13,6 +13,10 @@ def index():
 def management():
 	return render_template('management.html')
 
+@app.route('/tools')
+def tools():
+	return render_template('tools.html')
+
 @app.route('/news')
 def news():
 	return render_template('news.html')
